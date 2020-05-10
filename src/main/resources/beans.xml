@@ -3,6 +3,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- 经典HelloWorld Factory代理模式 -->
 	<bean id="springHelloWorld"
 		class="exe001.spring.helloworld.impl.SpringHelloWorld"></bean>
 	<bean id="strutsHelloWorld"
@@ -14,9 +15,15 @@
 	</bean>
 	
 	<!-- Person 对象，并设置name属性 -->
-	<bean id="helloPerson"
+	<bean id="Person"
 		class="exe002.Person">
 		<property name="name" value="Rui Zhou" />
+	</bean>
+	
+	<!-- 注意有两个Person对象 -->
+	<bean id="Person2"
+		class="exe002.Person">
+		<property name="name" value="Zhang San" />
 	</bean>
 	
 	

@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<!-- DI 注入依赖: Car 对象，并设置属性 -->
+	<bean id="Car"
+		class="exe003.Car">
+		<property name="brand" value="Audi" />
+		<property name="corp" value="Volkswagen" />
+		<property name="price" value="171000.00" />
+	</bean>
+	
+	<!-- DI 注入依赖: Car 对象，并设置构造器 -->
+	<bean id="Car2"
+		class="exe003.Car">
+		<constructor-arg value="BMW" />
+		<constructor-arg value="Volkswagen" />
+		<constructor-arg value="371000.00" />
+	</bean>
+	
+</beans>
