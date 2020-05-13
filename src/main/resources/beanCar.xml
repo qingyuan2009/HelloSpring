@@ -13,11 +13,13 @@
 	</bean>
 	
 	<!-- DI 注入依赖: Car 对象，并设置构造器 -->
+	<!-- index: 参数位置 -->
+	<!-- type: 参数类型，以免多个构造器发生混乱，type属性不会自动对应拆箱装箱属性类型，所以是否是类类型还是基本类型要保持一致 -->
 	<bean id="Car2"
 		class="exe003.Car">
-		<constructor-arg value="BMW" />
-		<constructor-arg value="Volkswagen" />
-		<constructor-arg value="371000.00" />
+		<constructor-arg value="BMW" index="0" type="java.lang.String"/>
+		<constructor-arg value="Volkswagen" index="1" type="java.lang.String" />
+		<constructor-arg value="371000.00"  index="2" type="double" />
 	</bean>
 	
 </beans>
