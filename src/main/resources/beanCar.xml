@@ -3,23 +3,49 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	
+
 	<!-- DI 注入依赖: Car 对象，并设置属性 -->
-	<bean id="Car"
-		class="exe003.Car">
+	<bean id="Car" class="exe003.Car">
 		<property name="brand" value="Audi" />
 		<property name="corp" value="Volkswagen" />
 		<property name="price" value="171000.00" />
 	</bean>
-	
+
 	<!-- DI 注入依赖: Car 对象，并设置构造器 -->
 	<!-- index: 参数位置 -->
 	<!-- type: 参数类型，以免多个构造器发生混乱，type属性不会自动对应拆箱装箱属性类型，所以是否是类类型还是基本类型要保持一致 -->
-	<bean id="Car2"
-		class="exe003.Car">
-		<constructor-arg value="BMW" index="0" type="java.lang.String"/>
-		<constructor-arg value="Volkswagen" index="1" type="java.lang.String" />
-		<constructor-arg value="371000.00"  index="2" type="double" />
+	<bean id="Car2" class="exe003.Car">
+		<constructor-arg value="BMW" index="0"
+			type="java.lang.String" />
+		<constructor-arg value="Volkswagen" index="1"
+			type="java.lang.String" />
+		<constructor-arg value="371000.00" index="2"
+			type="double" />
 	</bean>
-	
+
+	<!-- 字面量 1. 特殊字符: space: &nbsp; & : &amp; <: &lt; >: &gt; ": &quot; 2. <![CDATA[xxx]]> -->
+	<bean id="book" class="exe004.Book">
+		<property name="bookId">
+			<value>1001</value>
+		</property>
+		<property name="bookName">
+			<!-- <value>&lt;&lt;历史的温度&gt;&gt;</value> -->
+			<value><![CDATA[<<历史的温度>>]]></value>
+		</property>
+	</bean>
+
+	<!-- 引用其他的bean -->
+	<bean id="person2" class="exe003.Person2">
+		<property name="id">
+			<value>101</value>
+		</property>
+		<property name="name">
+			<value>rui</value>
+		</property>
+		<property name="car" ref="Car2">			
+		</property>
+	</bean>
+
+
+
 </beans>
