@@ -1,8 +1,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-                        http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
 	<!-- DI 注入依赖: Car 对象，并设置属性 -->
 	<bean id="Car" class="exe003.Car">
@@ -42,10 +43,90 @@
 		<property name="name">
 			<value>rui</value>
 		</property>
-		<property name="car" ref="Car2">			
+		<property name="car" ref="Car2">		
+		</property>
+		<!-- 给Car的级联属性赋值 -->
+		<property name="car.price" value="330000"/>
+	</bean>
+
+	<!-- 内部bean -->
+	<bean id="person3" class="exe003.Person2">
+		<property name="id" value="102" />
+		<property name="name" value="zhou" />
+		<property name="car">
+			<!-- 内部bean, id没有意义了-->
+			<bean class="exe003.Car">
+				<constructor-arg value="AUDI" index="0"
+					type="java.lang.String" />
+				<constructor-arg value="Volkswagen" index="1"
+					type="java.lang.String" />
+				<constructor-arg value="390000.00" index="2"
+					type="double" />
+			</bean>
 		</property>
 	</bean>
 
-
+	<!-- 使用P命名空间Namespace配置Bean -->
+	<bean id="Car3" class="exe003.Car" 
+		p:brand="Subaru"
+		p:corp="Subaru"
+		p:price="171000.00"
+	>	
+	</bean>
+	
+	<!-- null值 -->
+	<bean id="person4" class="exe003.Person2">
+		<property name="id">
+			<value>103</value>
+		</property>
+		<property name="name">
+			<value>wei</value>
+		</property>
+		<!-- 赋null值 -->
+		<property name="car"><null/>		
+		</property>	
+	</bean>
+	
+	<!-- List 集合 -->
+	<bean id="PersonList" class="exe005.PersonList">
+		<property name="name" value="Tom" />
+		<property name="cars" >
+			<list>
+				<ref bean="Car" />
+				<ref bean="Car2" />
+				<ref bean="Car3" />
+				<!-- 也可以用内部Bean-->
+			</list>
+			<!-- 也可以用array-->
+			<!-- 也可以用set-->
+		</property>
+	</bean>
+	
+	<!-- Map 集合 -->
+	<bean id="PersonMap" class="exe005.PersonMap">
+		<property name="name" value="Jerry" />
+		<property name="cars" >
+			<map>
+				<entry key="1" value-ref="Car" />
+				<entry key="2" value-ref="Car2" />
+				<entry key="3" value-ref="Car3" />
+			</map>			
+		</property>
+	</bean>
+	
+	<!-- 使用Util命名空间配置 集合Bean -->
+	<util:list id="listBean">
+		<ref bean="Car" />
+		<ref bean="Car2" />
+		<ref bean="Car3" />	
+		<!-- 也可以用内部Bean-->
+	</util:list>
+	
+	<!-- 引用集合Bean -->
+	<bean id="PersonList2" class="exe005.PersonList">
+		<property name="name" value="Lee" />
+		<property name="cars" ref="listBean" />		
+	</bean>
+	
 
 </beans>
