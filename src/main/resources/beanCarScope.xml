@@ -26,6 +26,9 @@
 		<property name="price" value="171000.00" />
 	</bean>
 	
+	<!-- Bean 后置处理器  -->
+	<bean class="exe009.BeanLifeCycle.MyBeanPostProcessor"></bean>
+	
 	
 
 	

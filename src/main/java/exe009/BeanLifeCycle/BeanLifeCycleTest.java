@@ -29,6 +29,11 @@ public class BeanLifeCycleTest {
          * stage 4: 使用Bean Car2 [brand=Audi, corp=Volkswagen, price=171000.0]
          * stage 5: 调用Bean的销毁方法
          */
+        
+        //注意如果配置了<bean class="exe009.BeanLifeCycle.MyBeanPostProcessor"></bean> 
+        //BeanPostProcessor处理会被触发， 见MyBeanPostProcessor.java
+        
+        
 
     }
 
