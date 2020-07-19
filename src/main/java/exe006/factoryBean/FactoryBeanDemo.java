@@ -1,4 +1,4 @@
-package factoryBean;
+package exe006.factoryBean;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

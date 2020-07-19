@@ -1,4 +1,4 @@
-package BeanRelation;
+package exe007.BeanRelation;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

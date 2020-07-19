@@ -1,4 +1,4 @@
-package BeanRelation;
+package exe007.BeanRelation;
 
 public class Address {    
     

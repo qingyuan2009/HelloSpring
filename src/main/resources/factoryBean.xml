@@ -6,7 +6,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
 
 	<!-- Factory Bean -->
-	<bean id="Car" class="factoryBean.CarFactoryBean">	
+	<bean id="Car" class="exe006.factoryBean.CarFactoryBean">	
 	</bean>
 
 	

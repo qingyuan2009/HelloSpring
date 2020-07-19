@@ -1,9 +1,10 @@
-package factoryBean;
+package exe006.factoryBean;
 
 import org.springframework.beans.factory.FactoryBean;
 
 import exe003.Car;
 
+//实现工厂bean接口
 public class CarFactoryBean implements FactoryBean<Car>{
 
     //返回对象

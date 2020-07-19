@@ -7,7 +7,7 @@
 
 	<!-- Bean的继承关系 -->
 	<!-- 父Bean -->	
-	<bean id="Address1" class="BeanRelation.Address">	
+	<bean id="Address1" class="exe007.BeanRelation.Address">	
 		<property name="city" value="Beijing" />
 		<property name="street" value="ChangAn" />
 	</bean>
@@ -23,13 +23,13 @@
 		<property name="street" value="ChangAn" />
 	</bean>
 	
-	<bean id="Address4" class="BeanRelation.Address" parent="Address3">	
+	<bean id="Address4" class="exe007.BeanRelation.Address" parent="Address3">	
 		<!--  <property name="city" value="Beijing" /> -->
 		<property name="street" value="WuDaoKou" />
 	</bean>
 	
 	<!-- depends-on 依赖关系，否则无法实例化 -->
-	<bean id="Address5" class="BeanRelation.Address" parent="Address3" depends-on="Address4">	
+	<bean id="Address5" class="exe007.BeanRelation.Address" parent="Address3" depends-on="Address4">	
 		<!--  <property name="city" value="Beijing" /> -->
 		<property name="street" value="BaDa" />
 	</bean>
