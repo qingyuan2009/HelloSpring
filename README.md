@@ -14,8 +14,13 @@
 # MVC
 
 *	视图层/表述层： MVC
-	V：视图层
+	V：视图层  JSP...
 	C：控制层，讲后台数据通过模型层返回给视图  --> @Controller
 	M：模型层
 *	业务逻辑层: service  --> @Service
 *	数据访问层/持久层： DAO  --> @Repository
+
+Controller(MVC) <-> Service <-> DAO
+
+注意： 通過接口調用bean
+
