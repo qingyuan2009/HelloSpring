@@ -22,5 +22,15 @@
 
 Controller(MVC) <-> Service <-> DAO
 
-注意： 通過接口調用bean
+# Autowired
+注意例子裏的通過接口調用bean
+Autowired是先用byType, 然後在用byName
+
+**@Repository("dao")**   //指定ID值
+
+**@Autowired(required=false)**  // required=false, 能裝配就裝配，不行也不報異常
+**@Qualifier("userJDBCImpl")**  // 在自動裝配是指定需要裝配的類名
+private UserDAO dao;
+
+
 
