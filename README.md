@@ -32,5 +32,9 @@ Autowired是先用byType, 然後在用byName
 **@Qualifier("userJDBCImpl")**  // 在自動裝配是指定需要裝配的類名
 private UserDAO dao;
 
+# 動態代理
+1.	基於接口實現動態代理： JDK
+2.	基於繼承實現動態代理： Cglib, Javassist
+
 
 
