@@ -19,13 +19,14 @@ import java.util.Arrays;
  * 
  */
 
-public class ArithmeticCalculatorProxy {
+public class InstanceProxy {
     // 目标对象是谁？ 如何获取代理对象？ 代理要做什么？
 
     // 目标对象
-    private ArithmeticCalculator target;
+    //private ArithmeticCalculator target;
+    private Object target;  // 更高級，可以對任何類進行代理
 
-    public ArithmeticCalculatorProxy(ArithmeticCalculator target) {
+    public InstanceProxy(Object target) {
         this.target = target;
     }
 
@@ -76,5 +77,8 @@ public class ArithmeticCalculatorProxy {
         }  
     }
     */
-
 }
+
+
+
+

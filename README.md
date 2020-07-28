@@ -36,5 +36,9 @@ private UserDAO dao;
 1.	基於接口實現動態代理： JDK
 2.	基於繼承實現動態代理： Cglib, Javassist
 
+//動態代理類都是動態生成的， 默認是在memory中， 這裏可以把它保存到硬盤
+Properties properties = System.getProperties();
+properties.put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+//可以com文件夾中看到生成的代理類： $Proxy0.class
 
 
