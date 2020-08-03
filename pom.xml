@@ -12,7 +12,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>4.1.4.RELEASE</version>
+			<version>5.2.1.RELEASE</version>
 		</dependency>
 
 		<!-- Spring Context -->
@@ -20,34 +20,66 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.1.4.RELEASE</version>
+			<version>5.2.1.RELEASE</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
+		<!-- AOP -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>5.2.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>5.2.1.RELEASE</version>
+		</dependency>
+
+		<!-- aspectJ -->
+		<dependency>
+			<groupId>net.sourceforge.cglib</groupId>
+			<artifactId>com.springsource.net.sf.cglib</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aopalliance</groupId>
+			<artifactId>com.springsource.org.aopalliance</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+  			<groupId>org.aspectj</groupId>
+  			<artifactId>com.springsource.org.aspectj.weaver</artifactId>
+  			<version>1.7.2.RELEASE</version>
+		</dependency>
+
 		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13-rc-1</version>
 		</dependency>
+
+		<!-- 
+		<dependency> 
+			<groupId>com.mchange</groupId> 
+			<artifactId>c3p0</artifactId> 
+			<version>0.9.5.5</version> 
+		</dependency> 
 		
-		<!--  			
-		<dependency>
-  			<groupId>com.mchange</groupId>
-  			<artifactId>c3p0</artifactId>
-  			<version>0.9.5.5</version>
-		</dependency>	
-			
-		<dependency>
-  			<groupId>mysql</groupId>
-  			<artifactId>mysql-connector-java</artifactId>
-  			<version>8.0.18</version>
-		</dependency>		
+		<dependency> 
+			<groupId>mysql</groupId> 
+			<artifactId>mysql-connector-java</artifactId> 
+			<version>8.0.18</version> 
+		</dependency> 
 		-->
 
 	</dependencies>

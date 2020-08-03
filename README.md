@@ -41,4 +41,48 @@ Properties properties = System.getProperties();
 properties.put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
 //可以com文件夾中看到生成的代理類： $Proxy0.class
 
+# AOP
+1.	横切关注点： 从每个方法中抽取出来的同一类非核心业务， 比如方法中的前置后置日志功能
+2.	切面(Aspect): 封装横切关注点信息的类，每个关注点体现为一个通知方法
+3.	通知(Advice)：切面必须要完成的各个具体工作
+4.	目标(Target): 被通知的对象
+5.  代理(Proxy)：创建的代理对象
+6.	连接点(JointPoint): 横切关注点具体实现在对应程序中的位置。纵横坐标：
+	横坐标：方法， 比如add(int i, int j), sub, multiple, divid...
+	纵坐标：方法开始，捕获异常， 方法结束
+7.	切入点(PointCut): 把日志功能运用在连接点，就意味着这是切入点
+
+# AspectJ
+<!-- AOP -->
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-aop</artifactId>
+	<version>5.2.1.RELEASE</version>
+</dependency>
+
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-aspects</artifactId>
+	<version>5.2.1.RELEASE</version>
+</dependency>
+
+<!-- aspectJ -->
+<dependency>
+	<groupId>net.sourceforge.cglib</groupId>
+	<artifactId>com.springsource.net.sf.cglib</artifactId>
+	<version>2.2.0</version>
+</dependency>
+
+<dependency>
+	<groupId>org.aopalliance</groupId>
+	<artifactId>com.springsource.org.aopalliance</artifactId>
+	<version>1.0.0</version>
+</dependency>
+
+<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>com.springsource.org.aspectj.weaver</artifactId>
+	<version>1.7.2.RELEASE</version>
+</dependency>
+
 
