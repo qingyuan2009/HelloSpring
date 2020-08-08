@@ -1,14 +1,35 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<!-- 直接配置C3P0连接池 ComboPooledDataSource -->
+	<!-- 第一种方式：直接配置C3P0连接池 ComboPooledDataSource -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test?&amp;useSSL=false&amp;serverTimezone=UTC"></property>
 		<property name="user" value="root"></property>
 		<property name="password" value="Shuuei37"></property>
+		<property name="initialPoolSize" value="5"></property>
+		<property name="maxPoolSize" value="10"></property>
+	</bean>
+	
+	<!-- 第二种方式：通过外部文件配置C3P0连接池 -->
+	<bean id="dataSource2" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<!-- classpath: 类路径  只能在spring中使用  classpath*:  多个类路径 -->
+		<property name="location" value="classpath:jdbc.properties"></property>	
+	</bean>
+	
+	<!-- 第三种方式 推荐：通过外部文件配置, 使用Context Namespace -->
+	<context:property-placeholder location="jdbc.properties"/>	
+	<bean id="dataSource3" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
+		<!-- 注意如果用不带前缀jdbc的“username”的话， 可能会获取到操作系统用户名，这样就连接不上了 -->
+		<!-- 建议properties里都要有前缀名 -->
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
 		<property name="initialPoolSize" value="5"></property>
 		<property name="maxPoolSize" value="10"></property>
 	</bean>

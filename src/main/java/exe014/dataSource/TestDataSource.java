@@ -17,7 +17,11 @@ public class TestDataSource {
         //DataSource ÊÇComboPooledDataSourceµÄ¸¸Àà
         DataSource ds = context.getBean("dataSource", DataSource.class);
         System.out.println("datasource is " + ds);
-        System.out.println("connection is " + ds.getConnection());        
+        System.out.println("connection is " + ds.getConnection());  
+        
+        DataSource ds3 = context.getBean("dataSource3", DataSource.class);
+        System.out.println("datasource is " + ds3);
+        System.out.println("connection is " + ds3.getConnection());  
     }
 
 }
