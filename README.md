@@ -1,3 +1,6 @@
+#来源
+Spring-大数据定制版-尚硅谷-spring - java
+
 # HelloSpring
 
 详见Bean配置的xml文件
@@ -27,7 +30,6 @@ Controller(MVC) <-> Service <-> DAO
 Autowired是先用byType, 然後在用byName
 
 **@Repository("dao")**   //指定ID值
-
 **@Autowired(required=false)**  // required=false, 能裝配就裝配，不行也不報異常
 **@Qualifier("userJDBCImpl")**  // 在自動裝配是指定需要裝配的類名
 private UserDAO dao;
@@ -53,36 +55,12 @@ properties.put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
 7.	切入点(PointCut): 把日志功能运用在连接点，就意味着这是切入点
 
 # AspectJ
-<!-- AOP -->
-<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-aop</artifactId>
-	<version>5.2.1.RELEASE</version>
-</dependency>
 
-<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-aspects</artifactId>
-	<version>5.2.1.RELEASE</version>
-</dependency>
+# Spring对JDBC的支持
+为了使JDBC更加易于使用，Spring在JDBC API上定义了一个抽象层，以此建立一个JDBC存取框架
+Spring提供JDBCTemplate, 与DAO Util类似
 
-<!-- aspectJ -->
-<dependency>
-	<groupId>net.sourceforge.cglib</groupId>
-	<artifactId>com.springsource.net.sf.cglib</artifactId>
-	<version>2.2.0</version>
-</dependency>
 
-<dependency>
-	<groupId>org.aopalliance</groupId>
-	<artifactId>com.springsource.org.aopalliance</artifactId>
-	<version>1.0.0</version>
-</dependency>
 
-<dependency>
-	<groupId>org.aspectj</groupId>
-	<artifactId>com.springsource.org.aspectj.weaver</artifactId>
-	<version>1.7.2.RELEASE</version>
-</dependency>
 
 
