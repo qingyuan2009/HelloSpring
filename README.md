@@ -65,5 +65,10 @@ Spring提供JDBCTemplate, 与DAO Util类似
 2.	JtaTransactionManager: J2EE
 3.	HibernateTransactionManager: Hibernate
 
+事务属性：这是Spring transaction的特性， 并不是JDBC的行为
+1.	事务传播行为： 一个事务被另一个事务调用时，当前的事务如何使用事务
+	Propagation.REQUIRED  默认, 使用调用者的事务
+	Propagation.REQUIRES_NEW  将调用者的事务挂起，重新开启事务来使用
+
 
 
