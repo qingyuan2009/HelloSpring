@@ -60,7 +60,10 @@ properties.put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
 为了使JDBC更加易于使用，Spring在JDBC API上定义了一个抽象层，以此建立一个JDBC存取框架
 Spring提供JDBCTemplate, 与DAO Util类似
 
-
+# 事务管理
+1.	DataSourceTransactionManager: JDBC
+2.	JtaTransactionManager: J2EE
+3.	HibernateTransactionManager: Hibernate
 
 
 
