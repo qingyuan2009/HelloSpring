@@ -60,4 +60,10 @@ public class Student {
 		this.grade = grade;
 	}
 
+    @Override
+    public String toString() {
+        return "Student [type=" + type + ", idcard=" + idcard + ", examcard=" + examcard + ", studentName="
+                + studentName + ", location=" + location + ", grade=" + grade + "]";
+    }	
+
 }
