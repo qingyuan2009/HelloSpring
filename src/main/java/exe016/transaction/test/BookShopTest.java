@@ -45,6 +45,16 @@ public class BookShopTest {
             e.printStackTrace();
         }        
     }    
+    
+    @Test
+    public void TestTransactionTimeOut() {
+        try {            
+            //注意买单本书上使用了service中使用了@Transactional
+            bookShopService.buyBook("Tom", "ISBN-001");
+        } catch(Exception e){
+            e.printStackTrace();
+        }        
+    }    
 
     //@Test
     public void TestCheckOut() {
@@ -55,6 +65,7 @@ public class BookShopTest {
             //如果CheckOut中不放transactional的话，会导致部分成功，部分失败
             //因为transactional之前只作用在买单本书上， e.g.bookShopService.buyBook("Tom", "ISBN-001");
             //还需要注意buyBook的事务传播行为：Propagation.REQUIRES_NEW， Propagation.REQUIRED
+            //Propagation.REQUIRES_NEW 允许买一本书成功，另一本失败
             cashier.CheckOut("Tom", booklist);
         } catch(Exception e){
             e.printStackTrace();
